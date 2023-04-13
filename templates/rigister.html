@@ -1,0 +1,20 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body bgcolor='cyan'>
+<h1>Rigister Page</h1>
+
+<form method='POST'>
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type='submit'>SignUp</button>
+</form>
+<small>Already have an account <a href="{% url 'login' %}">SignIn</a></small>
+
+
+
+</body>
+</html>

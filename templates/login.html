@@ -1,0 +1,10 @@
+<h2>login page</h2>
+
+{% block content %}
+<form method='POST'>
+    {% csrf_token %}
+    {{form}}
+    <button type='submit'>login</button>
+</form>
+<small>Need an account ?<a href="{% url 'register' %}">SignUp</a></small>
+{% endblock content %}

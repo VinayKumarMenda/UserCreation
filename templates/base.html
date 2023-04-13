@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<style>
+.image{
+    radius:50;
+    width:100px
+}
+</style>
+<body bgcolor='cyan'>
+
+
+{% if user.is_authenticated %}
+    <h1>{{user.username}}</h1>
+    <a  href="{% url 'profile' %}">profile</a>|<a href="{% url 'logout' %}">Logout</a>
+{% else %}
+    <h1>All Users</h1><br>
+    <a href="{% url 'register'%}">Register</a>|<a href="{% url 'login' %}">SignIn
+{% endif %}
+
+{%for i in model%}
+<table border=2>
+    <td>
+        <img src="{{i.profile.image.url}}" class='image'><br>
+    </td>
+    <td>
+        <h2><a href="login">{{i.username}}</a></h2><br>{{i.email}}
+    </td>
+</table>
+{%endfor%}
+
+
+</body>
+</html>

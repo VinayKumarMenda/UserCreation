@@ -1,0 +1,27 @@
+{% block content %}
+<body bgcolor='yellow'>
+<fieldset>
+    <legend>{{user.username}}</legend>
+    <h1>{{user.username}}</h1>
+    {{user.email}}
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        img {
+          border-radius: 50%;
+        }
+    </style>
+    <img src="{{user.profile.image.url}}" style="width:200px">
+    <form method='POST' enctype='multipart/form-data'>
+        {% csrf_token %}
+        <fieldset>
+            <legend>Profile Info</legend>
+            {{u_form}}
+            {{p_form}}
+            <button type="submit">Update</button>
+        </fieldset>
+    </form>
+</fieldset>
+</body>
+{% endblock%}
+
+<a href="{% url 'logout' %}">logout</a>

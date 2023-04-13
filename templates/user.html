@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>user creation</title>
+</head>
+<body>
+
+<h1>Create User</h1>
+
+<form method='POST'>
+    {% csrf_token %}
+    <label for='username'>Username:</label>
+    <input type='text' name='username' placeholder='enter username' required></input><br>
+    <label for='password'>Password:</label>
+    <input type='password' name='password' placeholder='password' required></input><br>
+    <label for='first_name'>FirstName:</label>
+    <input type='text' name='first_name' placeholder='first_name'></input><br>
+    <label for='password'>Email:</label>
+    <input type='text' name='email' placeholder='enter email'></input><br>
+    <button type='submit'>Save</button>
+</form>
+<p></p>
+
+</body>
+</html>
